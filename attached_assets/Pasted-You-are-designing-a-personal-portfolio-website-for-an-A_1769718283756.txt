@@ -1,0 +1,253 @@
+You are designing a personal portfolio website for an AI engineer who treats engineering as an art form.
+
+This website must feel intentional, minimal, and emotionally atmospheric — not like a generic portfolio template.
+
+====================
+IDENTITY
+====================
+
+Name: Aditya Prakash
+
+Role tagline:
+AI Engineer building agentic systems and intelligent automation infrastructure
+
+Contact:
+
+Phone: +91-6363736260
+Email: adiprakash35@gmail.com
+GitHub: https://github.com/AdityaPrakash781
+LinkedIn: https://www.linkedin.com/in/aditya-prakash-206341293
+Live Demo: https://health-navigator-copy.vercel.app/
+
+====================
+PERSONALITY TO CAPTURE
+====================
+
+- artistic systems engineer
+- startup builder energy
+- analytical + philosophical
+- rebellious but disciplined
+- dark aesthetic with clean white minimalism
+- thoughtful and creative
+- architecture-focused mindset
+- playful curiosity beneath serious engineering
+
+The site should feel like:
+
+an experimental AI research studio
+not a resume website
+not a startup landing page
+not a flashy designer template
+
+Think:
+quiet confidence + sublime darkness
+
+====================
+TECH STACK
+====================
+
+Use React + Vite.
+Modern CSS.
+No heavy animation libraries.
+Smooth transitions only.
+Performance-first.
+
+====================
+GLASS UI STYLE RULES
+====================
+
+Use subtle glassmorphism elements:
+
+• Frosted glass cards
+• Translucent navigation bar
+• Soft blur backgrounds
+• Layered depth panels
+
+Glass effect must be restrained and architectural.
+No neon glow.
+No cyberpunk colors.
+No flashy gradients.
+
+Glass should feel like:
+
+museum glass
+laboratory glass
+precision surfaces
+
+Use backdrop-filter blur and soft transparency.
+Keep readability high.
+
+====================
+COLOR + AESTHETIC
+====================
+
+Primary theme: deep black / charcoal
+Secondary: clean white
+Accent: soft gray / silver
+
+High contrast
+Lots of whitespace
+Minimal typography
+
+Background evokes:
+
+cosmic darkness
+fog
+depth
+quiet space
+
+The design should feel like:
+
+AI lab meets art gallery
+
+====================
+SITE STRUCTURE
+====================
+
+Pages:
+
+Home
+Projects
+Philosophy
+Contact
+
+Sticky minimal navigation bar with glass effect.
+
+====================
+HOME PAGE CONTENT
+====================
+
+Hero:
+
+Aditya Prakash
+
+Subtitle:
+
+Engineering intelligent systems as architecture
+
+Statement:
+
+If you build something, it must be intuitive and beautiful.
+Aesthetic clarity reflects architectural clarity.
+
+Secondary paragraph:
+
+Focused on agentic AI systems, automation infrastructure,
+human-AI interaction, and intelligence imitation
+through disciplined engineering.
+
+Buttons:
+
+View Work
+Live Demo
+GitHub
+
+Layout centered.
+Breathing space.
+Minimal distractions.
+
+====================
+PROJECTS PAGE
+====================
+
+Feature:
+
+VytalCare — Agentic RAG Health System
+
+Make this a technical case study.
+
+Sections:
+
+Problem
+Architecture
+System Philosophy
+Engineering Decisions
+Lessons Learned
+
+Tone:
+
+Technical but poetic.
+Confident but calm.
+Explain reasoning, not just tools.
+
+Include live demo link prominently.
+
+Glass project panels with subtle blur.
+
+====================
+PHILOSPHY PAGE
+====================
+
+Title:
+
+On Engineering
+
+Content style:
+
+Manifesto tone.
+Short reflective paragraphs.
+
+Themes:
+
+curiosity
+discipline
+experimentation
+architecture
+intelligence
+automation
+human-AI interaction
+
+This page should feel like a quiet manifesto,
+not a blog.
+
+====================
+CONTACT PAGE
+====================
+
+Minimal layout:
+
+Email
+GitHub
+LinkedIn
+
+Glass card centered.
+Large whitespace.
+Quiet ending.
+
+====================
+DESIGN RULES
+====================
+
+No flashy animations
+No template look
+No cartoon icons
+No corporate UI
+
+Use:
+
+subtle hover states
+clean transitions
+precise spacing
+balanced typography
+glass depth layering
+
+The site should feel deliberate and engineered.
+
+====================
+DELIVERABLE
+====================
+
+Generate a working React project with:
+
+/components
+/pages
+/styles
+
+Real code only.
+Production-ready structure.
+Comment clearly.
+
+The result should feel like:
+
+a personal AI research studio
+with artistic engineering identity
