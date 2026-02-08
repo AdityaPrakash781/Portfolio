@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { StarryBackground } from "@/components/StarryBackground";
 
 export default function Philosophy() {
   const sections = [
@@ -20,9 +21,10 @@ export default function Philosophy() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
+      <StarryBackground />
       <Navbar />
-      
-      <main className="flex-1 pt-32 pb-20 px-6">
+
+      <main className="flex-1 pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -30,7 +32,7 @@ export default function Philosophy() {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] text-white/10 select-none">
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] text-white/50 select-none">
               MANIFESTO
             </h1>
             <h2 className="text-3xl font-light text-white tracking-wide border-l-2 border-white/20 pl-6 py-2">
@@ -60,8 +62,8 @@ export default function Philosophy() {
               </motion.section>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -73,7 +75,7 @@ export default function Philosophy() {
           </motion.div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

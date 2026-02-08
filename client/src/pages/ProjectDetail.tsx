@@ -3,6 +3,7 @@ import { useRoute, Link } from "wouter";
 import { useProject } from "@/hooks/use-projects";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { StarryBackground } from "@/components/StarryBackground";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Github, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -38,9 +39,10 @@ export default function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <StarryBackground />
       <Navbar />
-      
-      <main className="flex-1 pt-32 pb-20 px-6">
+
+      <main className="flex-1 pt-32 pb-20 px-6 relative z-10">
         <article className="max-w-3xl mx-auto">
           <Link href="/projects">
             <button className="group flex items-center gap-2 text-zinc-500 hover:text-white mb-8 transition-colors font-mono text-sm">
@@ -65,16 +67,16 @@ export default function ProjectDetail() {
             <h1 className="text-5xl md:text-6xl font-bold tracking-tighter mb-4 text-white">
               {project.title}
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-zinc-400 font-light mb-8 leading-relaxed">
               {project.subtitle}
             </p>
 
             <div className="flex gap-4 mb-16 border-b border-white/5 pb-8">
               {project.liveLink && (
-                <a 
+                <a
                   href={project.liveLink}
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-zinc-200 transition-colors flex items-center gap-2"
                 >
@@ -82,9 +84,9 @@ export default function ProjectDetail() {
                 </a>
               )}
               {project.githubLink && (
-                <a 
+                <a
                   href={project.githubLink}
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 glass text-white font-medium rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
                 >
@@ -100,7 +102,7 @@ export default function ProjectDetail() {
           </motion.div>
         </article>
       </main>
-      
+
       <Footer />
     </div>
   );

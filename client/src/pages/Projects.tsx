@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { StarryBackground } from "@/components/StarryBackground";
 import { useProjects } from "@/hooks/use-projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Loader2 } from "lucide-react";
@@ -25,9 +26,10 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <StarryBackground />
       <Navbar />
-      
-      <main className="flex-1 pt-32 pb-20 px-6">
+
+      <main className="flex-1 pt-32 pb-20 px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +48,7 @@ export default function Projects() {
               <Loader2 className="w-8 h-8 text-zinc-600 animate-spin" />
             </div>
           ) : (
-            <motion.div 
+            <motion.div
               variants={container}
               initial="hidden"
               animate="show"
@@ -67,7 +69,7 @@ export default function Projects() {
           )}
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

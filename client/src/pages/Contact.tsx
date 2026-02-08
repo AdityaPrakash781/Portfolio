@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useCreateMessage } from "@/hooks/use-messages";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { StarryBackground } from "@/components/StarryBackground";
 import { insertMessageSchema, type InsertMessage } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, Send } from "lucide-react";
@@ -45,9 +46,10 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
+      <StarryBackground />
       <Navbar />
-      
-      <main className="flex-1 pt-32 pb-20 px-6 flex items-center">
+
+      <main className="flex-1 pt-32 pb-20 px-6 flex items-center relative z-10">
         <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -56,10 +58,10 @@ export default function Contact() {
           >
             <h1 className="text-5xl font-bold tracking-tighter mb-6 text-white">Get in Touch</h1>
             <p className="text-xl text-zinc-400 font-light mb-8 leading-relaxed">
-              Interested in collaborating or discussing AI architecture? 
+              Interested in collaborating or discussing AI architecture?
               I'm always open to interesting conversations and technical challenges.
             </p>
-            
+
             <div className="space-y-4 mb-12">
               <div className="glass p-6 rounded-xl">
                 <h3 className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-2">Email</h3>
@@ -83,7 +85,7 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">Message Sent</h3>
                   <p className="text-zinc-400">Thanks for reaching out! I'll be in touch shortly.</p>
-                  <button 
+                  <button
                     onClick={() => setSuccess(false)}
                     className="mt-6 text-sm text-white underline hover:text-zinc-300"
                   >
@@ -103,7 +105,7 @@ export default function Contact() {
                       <p className="text-red-400 text-xs">{form.formState.errors.name.message}</p>
                     )}
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Email</label>
                     <input
@@ -116,7 +118,7 @@ export default function Contact() {
                       <p className="text-red-400 text-xs">{form.formState.errors.email.message}</p>
                     )}
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Message</label>
                     <textarea
@@ -149,7 +151,7 @@ export default function Contact() {
           </motion.div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );
