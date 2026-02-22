@@ -5,6 +5,8 @@ import { Footer } from "@/components/Footer";
 import { ArrowRight, Github } from "lucide-react";
 import heroBg from "@assets/abstract-mesh.png"; // Assuming placeholder, will fallback if missing
 import { StarryBackground } from "@/components/StarryBackground";
+import { CatConstellation } from "@/components/CatConstellation";
+import { TaurusConstellation } from "@/components/TaurusConstellation";
 
 export default function Home() {
   return (
@@ -14,6 +16,17 @@ export default function Home() {
       <main className="flex-1 flex flex-col justify-center relative overflow-hidden pt-20">
         {/* Background Atmosphere */}
         <StarryBackground />
+
+        {/* Cat Constellation Layer */}
+        <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
+          <CatConstellation className="w-full h-full" />
+        </div>
+
+        {/* Taurus Constellation Layer */}
+        <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
+          <TaurusConstellation className="w-full h-full" />
+        </div>
+
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.03),_transparent_40%)] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-6 w-full relative z-10">

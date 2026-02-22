@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StarryBackground } from "@/components/StarryBackground";
+import { ArrowDown } from "lucide-react";
 
 export default function Philosophy() {
   const sections = [
@@ -55,9 +56,27 @@ export default function Philosophy() {
                   <h3 className="text-xl font-mono text-zinc-500 uppercase tracking-widest w-full md:w-1/3 group-hover:text-white transition-colors duration-300">
                     {section.title}
                   </h3>
-                  <p className="text-lg md:text-xl text-zinc-400 font-light leading-relaxed w-full md:w-2/3">
-                    {section.content}
-                  </p>
+                  <div className="w-full md:w-2/3 flex flex-col">
+                    <p className="text-lg md:text-xl text-zinc-400 font-light leading-relaxed">
+                      {section.content}
+                    </p>
+                    {section.title === "On Curiosity" && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.8, duration: 1 }}
+                        className="mt-16 flex flex-col items-center gap-4 text-zinc-500 font-mono text-xs uppercase tracking-widest opacity-70 w-max"
+                      >
+                        <span className="tracking-[0.2em]">Scroll to explore</span>
+                        <motion.div
+                          animate={{ y: [0, 10, 0] }}
+                          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        >
+                          <ArrowDown className="w-5 h-5 text-zinc-500" />
+                        </motion.div>
+                      </motion.div>
+                    )}
+                  </div>
                 </div>
               </motion.section>
             ))}
