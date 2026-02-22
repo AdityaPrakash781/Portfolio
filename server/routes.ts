@@ -41,7 +41,9 @@ export async function registerRoutes(
   // Seed data
   try {
     const existingProjects = await storage.getProjects();
-    if (existingProjects.length === 0) {
+
+    // Check for VytalCare
+    if (!existingProjects.some(p => p.title === "VytalCare")) {
       await storage.createProject({
         title: "VytalCare",
         subtitle: "Agentic RAG Health System",
@@ -72,6 +74,40 @@ export async function registerRoutes(
         githubLink: "https://github.com/AdityaPrakash781"
       });
       console.log("Database seeded with VytalCare project");
+    }
+
+    // Check for ProVytal-Marketing-Site
+    if (!existingProjects.some(p => p.title === "ProVytal-Marketing-Site")) {
+      await storage.createProject({
+        title: "ProVytal-Marketing-Site",
+        subtitle: "Predictive Health Intelligence Layer",
+        description: "A modern, proactive health marketing platform designed to turn biological data into actionable foresight.",
+        content: `
+# Problem
+Modern healthcare is fundamentally reactive, designed for crisis management rather than health optimization. By the time symptoms appear, biological cascades have often been running for weeks.
+
+# Mission
+Health should be proactive, not reactive. We are building the intelligence layer for your body—giving you the time, clarity, and control to prevent tomorrow's health crises today.
+
+# Architecture & Features
+- **Early Detection**: Monitoring micromovements in HRV, RHR, and sleep to spot anomalies weeks before symptoms appear.
+- **Decision Support**: Contextual AI that doesn't just show data, but explains what it means and what to do next.
+- **Lifestyle Intelligence**: Personalized adjustments to daily routines that compound into long-term vitality.
+- **Admin Waitlist System**: Robust lead management with an integrated admin dashboard.
+
+# Engineering Decisions
+- **Visual Excellence**: Built with a premium, dark-mode first aesthetic using Tailwind CSS and Framer Motion for smooth, organic transitions.
+- **Tech Stack**: React 19, Vite, Express, Drizzle ORM, and PostgreSQL for a high-performance, full-stack architecture.
+- **Component Systems**: Leveraged Shadcn UI for accessible, high-fidelity interactive elements including glassmorphism and subtle micro-animations.
+
+# Values
+Every membership creates impact, with a portion of revenue supporting preventative care digital infrastructure in underserved communities. Because proactive healthcare shouldn't be a privilege—it should be the global standard.
+        `,
+        tags: ["Predictive AI", "Health-Tech", "Full-Stack", "Modern UI", "React"],
+        liveLink: "https://pro-vytal-marketing-site.vercel.app/",
+        githubLink: "https://github.com/AdityaPrakash781"
+      });
+      console.log("Database seeded with ProVytal-Marketing-Site project");
     }
   } catch (error) {
     console.error("Error seeding database:", error);
