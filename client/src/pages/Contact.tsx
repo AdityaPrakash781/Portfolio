@@ -1,48 +1,10 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { useCreateMessage } from "@/hooks/use-messages";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StarryBackground } from "@/components/StarryBackground";
-import { insertMessageSchema, type InsertMessage } from "@shared/schema";
-import { useToast } from "@/hooks/use-toast";
-import { Loader2, Send } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export default function Contact() {
-  const { toast } = useToast();
-  const { mutate, isPending } = useCreateMessage();
-  const [success, setSuccess] = useState(false);
-
-  const form = useForm<InsertMessage>({
-    resolver: zodResolver(insertMessageSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: ""
-    }
-  });
-
-  const onSubmit = (data: InsertMessage) => {
-    mutate(data, {
-      onSuccess: () => {
-        setSuccess(true);
-        form.reset();
-        toast({
-          title: "Message Sent",
-          description: "Thank you for reaching out. I'll get back to you soon.",
-        });
-      },
-      onError: (error) => {
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description: error.message,
-        });
-      }
-    });
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
@@ -77,76 +39,28 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="glass-card p-8 rounded-2xl relative overflow-hidden">
-              {success ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-4">
-                    <Send className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Message Sent</h3>
-                  <p className="text-zinc-400">Thanks for reaching out! I'll be in touch shortly.</p>
-                  <button
-                    onClick={() => setSuccess(false)}
-                    className="mt-6 text-sm text-white underline hover:text-zinc-300"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Name</label>
-                    <input
-                      {...form.register("name")}
-                      className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
-                      placeholder="Your name"
-                    />
-                    {form.formState.errors.name && (
-                      <p className="text-red-400 text-xs">{form.formState.errors.name.message}</p>
-                    )}
-                  </div>
+            <div className="glass-card p-10 rounded-2xl relative overflow-hidden flex flex-col items-center text-center">
+              <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <Linkedin className="w-10 h-10 text-white" />
+              </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Email</label>
-                    <input
-                      {...form.register("email")}
-                      type="email"
-                      className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors"
-                      placeholder="your@email.com"
-                    />
-                    {form.formState.errors.email && (
-                      <p className="text-red-400 text-xs">{form.formState.errors.email.message}</p>
-                    )}
-                  </div>
+              <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Let's Connect</h2>
+              <p className="text-zinc-400 text-lg mb-10 max-w-sm leading-relaxed">
+                I prefer connecting through LinkedIn for professional inquiries and architectural discussions.
+              </p>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-mono text-zinc-500 uppercase tracking-widest">Message</label>
-                    <textarea
-                      {...form.register("message")}
-                      rows={5}
-                      className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition-colors resize-none"
-                      placeholder="Tell me about your project or inquiry..."
-                    />
-                    {form.formState.errors.message && (
-                      <p className="text-red-400 text-xs">{form.formState.errors.message.message}</p>
-                    )}
-                  </div>
+              <a
+                href="https://www.linkedin.com/in/aditya-prakash-206341293"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-5 bg-white text-black font-semibold rounded-xl hover:bg-zinc-200 transition-all flex items-center justify-center gap-3 text-lg"
+              >
+                Connect on LinkedIn
+              </a>
 
-                  <button
-                    type="submit"
-                    disabled={isPending}
-                    className="w-full py-4 bg-white text-black font-medium rounded-lg hover:bg-zinc-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                  >
-                    {isPending ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" /> Sending...
-                      </>
-                    ) : (
-                      "Send Message"
-                    )}
-                  </button>
-                </form>
-              )}
+              <p className="mt-8 text-sm font-mono text-zinc-500 uppercase tracking-widest">
+                Usually responds within 24 hours
+              </p>
             </div>
           </motion.div>
         </div>

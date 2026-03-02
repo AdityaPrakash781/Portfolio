@@ -7,26 +7,26 @@ export function Footer() {
         <div className="text-zinc-500 text-sm font-mono">
           © {new Date().getFullYear()} Aditya Prakash. All rights reserved.
         </div>
-        
+
         <div className="flex items-center gap-6">
-          <a 
-            href="https://github.com" 
-            target="_blank" 
+          <a
+            href="https://github.com"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-500 hover:text-white transition-colors"
           >
             <Github className="w-5 h-5" />
           </a>
-          <a 
-            href="https://linkedin.com" 
-            target="_blank" 
+          <a
+            href="https://www.linkedin.com/in/aditya-prakash-206341293"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-500 hover:text-white transition-colors"
           >
             <Linkedin className="w-5 h-5" />
           </a>
-          <a 
-            href="mailto:adiprakash35@gmail.com" 
+          <a
+            href="mailto:adiprakash35@gmail.com"
             className="text-zinc-500 hover:text-white transition-colors"
           >
             <Mail className="w-5 h-5" />

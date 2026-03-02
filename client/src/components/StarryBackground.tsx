@@ -77,12 +77,12 @@ export const StarryBackground = () => {
         };
 
         const drawStars = () => {
-            // Dreamy, ethereal night sky gradient
+            // Dreamy, ethereal night sky gradient (darker hues)
             const bgGradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-            bgGradient.addColorStop(0, "#01010b");   // Deep space black-blue
-            bgGradient.addColorStop(0.3, "#040316"); // Deep midnight violet
-            bgGradient.addColorStop(0.7, "#080629"); // Dreamy dark purple-blue
-            bgGradient.addColorStop(1, "#110b36");   // Soft, dark twilight purple/blue near the bottom
+            bgGradient.addColorStop(0, "#010106");   // Very deep space black-blue
+            bgGradient.addColorStop(0.3, "#02010c"); // Extremely dark midnight violet
+            bgGradient.addColorStop(0.7, "#040316"); // Very dark, dreamy purple-blue
+            bgGradient.addColorStop(1, "#080522");   // Barely perceptible twilight purple/blue near bottom
 
             ctx.fillStyle = bgGradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
