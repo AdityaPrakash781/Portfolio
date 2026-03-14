@@ -58,16 +58,16 @@ export const StarryBackground = () => {
 
             for (let i = 0; i < numStars; i++) {
                 const size = Math.random();
-                // Most stars are tiny, few are larger
-                const radius = size < 0.9 ? Math.random() * 0.6 + 0.15 :
-                    size < 0.97 ? Math.random() * 1.2 + 0.6 :
-                        Math.random() * 2.0 + 0.8;
+                // Most stars are tiny, few are larger. Increased radii for better visibility
+                const radius = size < 0.85 ? Math.random() * 0.8 + 0.3 :
+                    size < 0.96 ? Math.random() * 1.5 + 0.8 :
+                        Math.random() * 2.5 + 1.2;
 
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
                     radius: radius,
-                    baseAlpha: Math.random() * 0.5 + 0.2, // Slightly dimmer base for realism
+                    baseAlpha: Math.random() * 0.6 + 0.4, // Brighter base for prominence
                     twinkleSpeed: Math.random() * 0.02 + 0.005,
                     twinklePhase: Math.random() * Math.PI * 2,
                     speed: Math.random() * 0.02 + 0.002, // Slower movement
@@ -100,19 +100,19 @@ export const StarryBackground = () => {
                 const alphaMod = 0.6 + 0.4 * twinkle;
                 const currentAlpha = Math.max(0.1, Math.min(1, star.baseAlpha * alphaMod));
 
-                // Pure white stars (softened slightly)
-                ctx.fillStyle = `rgba(${star.color}, ${currentAlpha * 0.9})`;
+                // Pure white stars (brighter)
+                ctx.fillStyle = `rgba(${star.color}, ${currentAlpha})`;
 
                 // Add softer, wider glow for larger dreamy stars
                 if (star.radius > 1.2) {
-                    ctx.shadowBlur = 12;
-                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha})`;
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 1.2})`;
                 } else if (star.radius > 0.6) {
-                    ctx.shadowBlur = 6;
-                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 0.6})`;
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 0.9})`;
                 } else {
-                    ctx.shadowBlur = 2; // Even tiny stars get a faint dreamy glow
-                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 0.3})`;
+                    ctx.shadowBlur = 3; // Even tiny stars get a faint dreamy glow
+                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 0.5})`;
                 }
 
                 ctx.beginPath();
