@@ -7,6 +7,7 @@ import { ArrowRight, Github } from "lucide-react";
 import { StarryBackground } from "@/components/StarryBackground";
 import { CatConstellation } from "@/components/CatConstellation";
 import { TaurusConstellation } from "@/components/TaurusConstellation";
+import { ParticleNetwork } from "@/components/ParticleNetwork";
 
 export default function Home() {
   return (
@@ -14,9 +15,14 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-1 flex flex-col justify-center relative overflow-hidden pt-20">
+
         {/* Background Atmosphere */}
         <StarryBackground />
 
+        {/* AI Neural Mesh Layer (Right side only) */}
+        <div className="absolute inset-y-0 right-0 w-full md:w-2/3 lg:w-1/2 z-0 pointer-events-auto opacity-70">
+          <ParticleNetwork />
+        </div>
         {/* Cat Constellation Layer */}
         <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
           <CatConstellation className="w-full h-full" />

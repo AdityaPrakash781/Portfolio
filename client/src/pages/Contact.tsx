@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StarryBackground } from "@/components/StarryBackground";
+import { ParticleNetwork } from "@/components/ParticleNetwork";
 import { Linkedin } from "lucide-react";
 
 export default function Contact() {
@@ -9,9 +10,10 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
       <StarryBackground />
+      <ParticleNetwork />
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-20 px-6 flex items-center relative z-10">
+      <main className="flex-1 pt-32 pb-20 px-6 flex items-center relative z-10 overflow-hidden">
         <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}

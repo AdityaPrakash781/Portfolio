@@ -1,5 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
+import { Clock } from "@/components/Clock";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -13,6 +14,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center py-6 px-4">
+      {/* Centered navigation links */}
       <div className="glass px-6 py-3 rounded-full flex items-center gap-1 shadow-xl shadow-black/20">
         {links.map((link) => {
           const isActive = location === link.href;
@@ -31,6 +33,11 @@ export function Navbar() {
             </Link>
           );
         })}
+      </div>
+
+      {/* Right-aligned Clock */}
+      <div className="absolute right-6 top-6">
+        <Clock />
       </div>
     </nav>
   );

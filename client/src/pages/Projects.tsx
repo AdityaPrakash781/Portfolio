@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StarryBackground } from "@/components/StarryBackground";
+import { ParticleNetwork } from "@/components/ParticleNetwork";
 import { useProjects } from "@/hooks/use-projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Loader2 } from "lucide-react";
@@ -27,9 +28,10 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <StarryBackground />
+      <ParticleNetwork />
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-20 px-6 relative z-10">
+      <main className="flex-1 pt-32 pb-20 px-6 relative z-10 overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -4,6 +4,7 @@ import { useProject } from "@/hooks/use-projects";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StarryBackground } from "@/components/StarryBackground";
+import { ParticleNetwork } from "@/components/ParticleNetwork";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Github, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -40,9 +41,10 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <StarryBackground />
+      <ParticleNetwork />
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-20 px-6 relative z-10">
+      <main className="flex-1 pt-32 pb-20 px-6 relative z-10 overflow-hidden">
         <article className="max-w-3xl mx-auto">
           <Link href="/projects">
             <button className="group flex items-center gap-2 text-zinc-500 hover:text-white mb-8 transition-colors font-mono text-sm">

@@ -1,12 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
 import { StarryBackground } from "@/components/StarryBackground";
+import { ParticleNetwork } from "@/components/ParticleNetwork";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen w-full flex items-center justify-center bg-background text-foreground relative overflow-hidden">
       <StarryBackground />
-      <Card className="w-full max-w-md mx-4">
+      <ParticleNetwork />
+      <Card className="w-full max-w-md mx-4 relative z-10">
         <CardContent className="pt-6">
           <div className="flex mb-4 gap-2">
             <AlertCircle className="h-8 w-8 text-red-500" />
