@@ -29,8 +29,8 @@ export default function Contact() {
             <div className="space-y-4 mb-12">
               <div className="glass p-6 rounded-xl">
                 <h3 className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-2">Email</h3>
-                <a href="mailto:adiprakash35@gmail.com" className="text-xl text-white hover:text-zinc-300 transition-colors">
-                  adiprakash35@gmail.com
+                <a href="mailto:adiprakash.business@gmail.com" className="text-xl text-white hover:text-zinc-300 transition-colors">
+                  adiprakash.business@gmail.com
                 </a>
               </div>
             </div>

@@ -128,7 +128,7 @@ export const StarryBackground = () => {
             });
 
             // Randomly create shooting stars
-            if (Math.random() < 0.005) { // 0.5% chance per frame
+            if (Math.random() < 0.02) { // 2% chance per frame (increased frequency)
                 const startX = Math.random() * canvas.width * 1.5;
                 const startY = Math.random() * canvas.height * 0.3; // mostly higher up
                 const angle = Math.PI / 4 + Math.random() * 0.15; // approx 45 degrees

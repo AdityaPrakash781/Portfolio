@@ -31,7 +31,7 @@ export function ParticleNetwork() {
 
     // Config for dense, geometric mesh
     const CONNECTION_DISTANCE = 150; // Slightly tighter connections
-    const PARTICLE_COUNT = 150; // Reduced density target
+    const PARTICLE_COUNT = 250; // Increased density to fill the entire full-screen viewport
     const SPEED_FACTOR = 0.3; // Slower, minimal drift
 
     // Handle Resize
@@ -54,11 +54,9 @@ export function ParticleNetwork() {
       const adaptiveCount = Math.min(PARTICLE_COUNT, Math.floor(area / 6000)); // Lower density limits
 
       for (let i = 0; i < adaptiveCount; i++) {
-        // Bias clustering towards the upper right quadrant
-        // Math.pow(..., 0.8) skews slightly towards 1 (right)
-        // Math.pow(..., 1.1) skews slightly towards 0 (top)
-        const biasX = Math.pow(Math.random(), 0.8);
-        const biasY = Math.pow(Math.random(), 1.1);
+        // Uniform distribution across the entire screen
+        const biasX = Math.random();
+        const biasY = Math.random();
 
         const z = Math.random() * 0.8 + 0.2; // Depth layer from 0.2 to 1.0
 
@@ -200,7 +198,8 @@ export function ParticleNetwork() {
               const dist3 = Math.sqrt(dx3 * dx3 + dy3 * dy3);
 
               const avgDist = (dist1 + dist2 + dist3) / 3;
-              const faceOpacity = (1 - avgDist / CONNECTION_DISTANCE) * 0.35; // Increased max opacity to balance density drop
+              // Target opacity: 0.15 - 0.22 max based on proximity requested by user
+              const faceOpacity = (1 - avgDist / CONNECTION_DISTANCE) * 0.22;
 
               if (faceOpacity > 0) {
                 ctx.beginPath();
@@ -237,11 +236,7 @@ export function ParticleNetwork() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-y-0 right-0 w-full md:w-2/3 lg:w-1/2 z-0 pointer-events-auto opacity-70"
-      style={{
-        maskImage: "linear-gradient(to right, transparent 0%, black 30%, black 100%)",
-        WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 30%, black 100%)",
-      }}
+      className="fixed inset-0 w-full h-full z-0 pointer-events-none opacity-60"
     />
   );
 }
