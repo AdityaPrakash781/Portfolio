@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ArrowRight, Github } from "lucide-react";
-import heroBg from "@assets/abstract-mesh.png"; // Assuming placeholder, will fallback if missing
+
 import { StarryBackground } from "@/components/StarryBackground";
 import { CatConstellation } from "@/components/CatConstellation";
 import { TaurusConstellation } from "@/components/TaurusConstellation";
