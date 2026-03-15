@@ -13,15 +13,15 @@ export default function Contact() {
       <ParticleNetwork />
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-20 px-6 flex items-center relative z-10 overflow-hidden">
-        <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <main className="flex-1 pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 flex items-center relative z-10 overflow-hidden">
+        <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl font-bold tracking-tighter mb-6 text-white">Get in Touch</h1>
-            <p className="text-xl text-zinc-400 font-light mb-8 leading-relaxed">
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tighter mb-4 sm:mb-6 text-white">Get in Touch</h1>
+            <p className="text-base sm:text-xl text-zinc-400 font-light mb-6 sm:mb-8 leading-relaxed">
               Interested in collaborating or discussing AI architecture?
               I'm always open to interesting conversations and technical challenges.
             </p>
@@ -41,13 +41,13 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="glass-card p-10 rounded-2xl relative overflow-hidden flex flex-col items-center text-center">
+            <div className="glass-card p-6 sm:p-10 rounded-2xl relative overflow-hidden flex flex-col items-center text-center">
               <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Linkedin className="w-10 h-10 text-white" />
               </div>
 
-              <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Let's Connect</h2>
-              <p className="text-zinc-400 text-lg mb-10 max-w-sm leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 tracking-tight">Let's Connect</h2>
+              <p className="text-zinc-400 text-base sm:text-lg mb-8 sm:mb-10 max-w-sm leading-relaxed">
                 I prefer connecting through LinkedIn for professional inquiries and architectural discussions.
               </p>
 

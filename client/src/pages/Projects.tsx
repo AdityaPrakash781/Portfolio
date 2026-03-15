@@ -31,7 +31,7 @@ export default function Projects() {
       <ParticleNetwork />
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-20 px-6 relative z-10 overflow-hidden">
+      <main className="flex-1 pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 relative z-10 overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export default function Projects() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <h1 className="text-5xl font-bold tracking-tighter mb-6">Selected Work</h1>
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tighter mb-4 sm:mb-6">Selected Work</h1>
             <p className="text-zinc-400 max-w-xl text-lg font-light leading-relaxed">
               A collection of engineering problems solved through code, architecture, and systems thinking.
             </p>
@@ -74,21 +74,21 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mt-24 mb-16"
+            className="mt-16 sm:mt-24 mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl font-bold tracking-tighter mb-6 text-white/80">Currently Working On</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter mb-4 sm:mb-6 text-white/80">Currently Working On</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
               {/* IntentAware */}
               <motion.div variants={item} className="h-full">
-                <div className="group relative w-full h-full glass-card rounded-xl overflow-hidden p-8 flex flex-col hover:-translate-y-1 transition-transform duration-300">
+                <div className="group relative w-full h-full glass-card rounded-xl overflow-hidden p-5 sm:p-8 flex flex-col hover:-translate-y-1 transition-transform duration-300">
                   <div className="mt-2 mb-8">
                     <div className="flex gap-2 mb-4 flex-wrap">
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">Computer Vision</span>
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">Gesture Control</span>
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">HCI</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-zinc-200 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-zinc-200 transition-colors">
                       IntentAware
                     </h3>
                   </div>
@@ -111,7 +111,7 @@ export default function Projects() {
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">XAI</span>
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">Three.js</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-zinc-200 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-zinc-200 transition-colors">
                       Pipeline Integrity Digital Twin
                     </h3>
                   </div>
@@ -133,7 +133,7 @@ export default function Projects() {
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">Productivity</span>
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">UI/UX</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-zinc-200 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-zinc-200 transition-colors">
                       UniNotes
                     </h3>
                   </div>
@@ -157,7 +157,7 @@ export default function Projects() {
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">NLP</span>
                       <span className="px-2 py-1 text-xs font-mono text-zinc-400 border border-white/10 rounded-md bg-white/5">Automation</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-zinc-200 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-zinc-200 transition-colors">
                       Vidhan AI
                     </h3>
                   </div>

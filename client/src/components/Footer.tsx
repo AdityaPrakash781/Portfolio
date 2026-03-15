@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="w-full py-12 px-4 border-t border-white/5 bg-black/20 backdrop-blur-sm mt-auto">
+    <footer className="w-full py-8 sm:py-12 px-4 border-t border-white/5 bg-black/20 backdrop-blur-sm mt-auto">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-zinc-500 text-sm font-mono">
           © {new Date().getFullYear()} Aditya Prakash. All rights reserved.

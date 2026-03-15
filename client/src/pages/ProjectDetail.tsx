@@ -44,7 +44,7 @@ export default function ProjectDetail() {
       <ParticleNetwork />
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-20 px-6 relative z-10 overflow-hidden">
+      <main className="flex-1 pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 relative z-10 overflow-hidden">
         <article className="max-w-3xl mx-auto">
           <Link href="/projects">
             <button className="group flex items-center gap-2 text-zinc-500 hover:text-white mb-8 transition-colors font-mono text-sm">
@@ -66,15 +66,15 @@ export default function ProjectDetail() {
               ))}
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tighter mb-4 text-white">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter mb-4 text-white">
               {project.title}
             </h1>
 
-            <p className="text-xl md:text-2xl text-zinc-400 font-light mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-zinc-400 font-light mb-6 sm:mb-8 leading-relaxed">
               {project.subtitle}
             </p>
 
-            <div className="flex gap-4 mb-16 border-b border-white/5 pb-8">
+            <div className="flex flex-wrap gap-3 sm:gap-4 mb-10 sm:mb-16 border-b border-white/5 pb-6 sm:pb-8">
               {project.liveLink && (
                 <a
                   href={project.liveLink}

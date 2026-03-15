@@ -35,19 +35,19 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.03),_transparent_40%)] pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto px-6 w-full relative z-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 w-full relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="text-zinc-500 font-mono text-sm mb-6 tracking-widest uppercase">
+            <h2 className="text-zinc-500 font-mono text-xs sm:text-sm mb-4 sm:mb-6 tracking-widest uppercase">
               AI Engineer & Architect
             </h2>
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/50">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 sm:mb-8 leading-[0.9] text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/50">
               Aditya Prakash
             </h1>
-            <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl leading-relaxed font-light mb-12">
+            <p className="text-lg sm:text-xl md:text-2xl text-zinc-400 max-w-2xl leading-relaxed font-light mb-8 sm:mb-12">
               Engineering intelligent systems as architecture. Bridging the gap between
               <span className="text-white font-medium ml-1">theoretical AI</span> and
               <span className="text-white font-medium ml-1">production reality</span>.

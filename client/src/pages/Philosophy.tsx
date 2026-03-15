@@ -27,24 +27,24 @@ export default function Philosophy() {
       <ParticleNetwork />
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-20 px-6 relative z-10 overflow-hidden">
+      <main className="flex-1 pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 relative z-10 overflow-hidden">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="mb-12 sm:mb-20"
           >
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] text-white/50 select-none">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 sm:mb-8 leading-[0.9] text-white/50 select-none">
               MANIFESTO
             </h1>
-            <h2 className="text-3xl font-light text-white tracking-wide border-l-2 border-white/20 pl-6 py-2">
+            <h2 className="text-xl sm:text-3xl font-light text-white tracking-wide border-l-2 border-white/20 pl-4 sm:pl-6 py-2">
               Engineering is not merely about building;<br />
               it is about <span className="text-zinc-500">understanding</span>.
             </h2>
           </motion.div>
 
-          <div className="space-y-24">
+          <div className="space-y-16 sm:space-y-24">
             {sections.map((section, index) => (
               <motion.section
                 key={section.title}
@@ -55,7 +55,7 @@ export default function Philosophy() {
                 className="group"
               >
                 <div className="flex flex-col md:flex-row gap-8 items-baseline">
-                  <h3 className="text-xl font-mono text-zinc-500 uppercase tracking-widest w-full md:w-1/3 group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-base sm:text-xl font-mono text-zinc-500 uppercase tracking-widest w-full md:w-1/3 group-hover:text-white transition-colors duration-300">
                     {section.title}
                   </h3>
                   <div className="w-full md:w-2/3 flex flex-col">
