@@ -44,7 +44,7 @@ export const StarryBackground = () => {
             stars = [];
             shootingStars = [];
             // High density for realistic starfield
-            const numStars = Math.floor((canvas.width * canvas.height) / 1500);
+            const numStars = Math.floor((canvas.width * canvas.height) / 1150);
             // Star colors based on actual spectral types (O, B, A, F, G, K, M)
             // Mostly white/blue-white, some yellow, rare red/orange
             const getStarColor = () => {
@@ -59,15 +59,15 @@ export const StarryBackground = () => {
             for (let i = 0; i < numStars; i++) {
                 const size = Math.random();
                 // Most stars are tiny, few are larger. Increased radii for better visibility
-                const radius = size < 0.85 ? Math.random() * 0.8 + 0.3 :
-                    size < 0.96 ? Math.random() * 1.5 + 0.8 :
-                        Math.random() * 2.5 + 1.2;
+                const radius = size < 0.85 ? Math.random() * 0.9 + 0.35 :
+                    size < 0.96 ? Math.random() * 1.6 + 0.9 :
+                        Math.random() * 2.8 + 1.5;
 
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
                     radius: radius,
-                    baseAlpha: Math.random() * 0.6 + 0.4, // Brighter base for prominence
+                    baseAlpha: Math.random() * 0.4 + 0.55, // Moderately bright stars
                     twinkleSpeed: Math.random() * 0.02 + 0.005,
                     twinklePhase: Math.random() * Math.PI * 2,
                     speed: Math.random() * 0.02 + 0.002, // Slower movement
@@ -79,10 +79,10 @@ export const StarryBackground = () => {
         const drawStars = () => {
             // Dreamy, ethereal night sky gradient (darker hues)
             const bgGradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-            bgGradient.addColorStop(0, "#010106");   // Very deep space black-blue
-            bgGradient.addColorStop(0.3, "#02010c"); // Extremely dark midnight violet
-            bgGradient.addColorStop(0.7, "#040316"); // Very dark, dreamy purple-blue
-            bgGradient.addColorStop(1, "#080522");   // Barely perceptible twilight purple/blue near bottom
+            bgGradient.addColorStop(0, "#000004");   // Near-black deep space
+            bgGradient.addColorStop(0.3, "#010008"); // Extremely dark midnight violet
+            bgGradient.addColorStop(0.7, "#020110"); // Very dark purple-blue
+            bgGradient.addColorStop(1, "#050318");   // Deep twilight at bottom
 
             ctx.fillStyle = bgGradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -97,27 +97,35 @@ export const StarryBackground = () => {
                 const twinkle = (twinkle1 + twinkle2) * 0.5;
 
                 // Real stars can sometimes almost disappear when they twinkle
-                const alphaMod = 0.6 + 0.4 * twinkle;
-                const currentAlpha = Math.max(0.1, Math.min(1, star.baseAlpha * alphaMod));
+                const alphaMod = 0.65 + 0.35 * twinkle;
+                const currentAlpha = Math.max(0.15, Math.min(1, star.baseAlpha * alphaMod));
 
-                // Pure white stars (brighter)
-                ctx.fillStyle = `rgba(${star.color}, ${currentAlpha})`;
-
-                // Add softer, wider glow for larger dreamy stars
+                // --- Draw star: outer glow pass, then sharp core pass ---
                 if (star.radius > 1.2) {
-                    ctx.shadowBlur = 15;
-                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 1.2})`;
-                } else if (star.radius > 0.6) {
-                    ctx.shadowBlur = 8;
-                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 0.9})`;
-                } else {
-                    ctx.shadowBlur = 3; // Even tiny stars get a faint dreamy glow
-                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 0.5})`;
-                }
+                    // Pass 1: soft wide glow (blurry halo)
+                    const glowBlur = star.radius > 2.0 ? 14 : 8;
+                    ctx.shadowBlur = glowBlur;
+                    ctx.shadowColor = `rgba(${star.color}, ${Math.min(1, currentAlpha * 0.8)})`;
+                    ctx.fillStyle = `rgba(${star.color}, ${currentAlpha * 0.4})`;
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius * 1.6, 0, Math.PI * 2);
+                    ctx.fill();
 
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fill();
+                    // Pass 2: bright, tight core — no blur so it's crisp
+                    ctx.shadowBlur = 0;
+                    ctx.fillStyle = `rgba(${star.color}, ${Math.min(1, currentAlpha * 1.1)})`;
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius * 0.7, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    // Small stars: single pass, tight glow
+                    ctx.shadowBlur = star.radius > 0.6 ? 4 : 2;
+                    ctx.shadowColor = `rgba(${star.color}, ${currentAlpha * 0.7})`;
+                    ctx.fillStyle = `rgba(${star.color}, ${Math.min(1, currentAlpha)})`;
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                }
 
                 // Gentle drift
                 star.y -= star.speed;
